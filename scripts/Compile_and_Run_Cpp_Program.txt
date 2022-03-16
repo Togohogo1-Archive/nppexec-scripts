@@ -1,0 +1,29 @@
+npp_console ?
+npp_save
+
+inputbox "Script Arguments" : "Pass Version" : 11
+set local SCRIPT_ARGS = $(INPUT)
+
+inputbox "Execution Method" : "Run With" : cmd
+set local EXEC_METHOD = $(INPUT)
+
+set local COMPILE = g++ -std=c++$(SCRIPT_ARGS) -Wall -O2 -o "$(NAME_PART).exe" "$(FILE_NAME)"
+set local RUN = "$(NAME_PART).exe"
+env_set PATH = $(NPP_DIRECTORY)\..\..\Programming Languages\Cpp\bin\;$(SYS.PATH)
+
+if $(EXEC_METHOD) == cmd
+    npp_run cmd /c cd /d "$(CURRENT_DIRECTORY)" && echo $(COMPILE) && $(COMPILE) && echo $(RUN) && $(RUN) & pause
+else if $(EXEC_METHOD) == con
+    npp_console 1
+    cd "$(CURRENT_DIRECTORY)"
+    $(COMPILE)
+    $(RUN)
+else
+    echo Invalid Execution Method
+endif
+
+unset local SCRIPT_ARGS
+unset local EXEC_METHOD
+unset local COMPILE
+unset local RUN
+env_unset PATH

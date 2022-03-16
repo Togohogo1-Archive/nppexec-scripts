@@ -1,0 +1,7 @@
+npp_console ?
+
+if "$(CURRENT_DIRECTORY)" == ""
+    npp_run cmd /k cd /d "C:\"
+else
+    npp_run cmd /k cd /d "$(CURRENT_DIRECTORY)"
+endif
