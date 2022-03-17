@@ -2,7 +2,7 @@
 Scripts used in the [NppExec](https://github.com/d0vgan/nppexec) Notepad++ plugin
 
 ### Running Scripts with F6
-After pressing F6 in Notepad++, select the `<temporary script>` dropdown option, and click `OK` after pasting the script in the inputbox.
+After pressing F6 in Notepad++, select the `<temporary script>` dropdown option, and click `OK` after pasting the script in the input box.
 
 ### Running Scripts with Keyboard Shortcuts
 Alternatively, scripts can be run by using keyboard shortcuts after being associated with one:
